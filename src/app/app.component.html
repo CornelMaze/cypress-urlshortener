@@ -1,8 +1,10 @@
 <app-preloader *ngIf="loading"></app-preloader>
 <div class="container">
   <div class="url">
-    <!-- <div class="input"> -->
-    <h2>Url Shortener</h2>
+    <div>
+      <h2>Url Shortener</h2>
+      <div>Enter a url to shorten in the search field</div>
+    </div>
     <input
       type="text"
       class="form-control"
@@ -13,7 +15,6 @@
     <div class="btn-box">
       <button class="btn" (click)="getShortLink()">Shorten Url</button>
     </div>
-    <!-- </div> -->
   </div>
   <div class="response">
     <div class="shorten-link" *ngFor="let item of shortenLink">
