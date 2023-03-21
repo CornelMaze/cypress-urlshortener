@@ -1,0 +1,143 @@
+.container {
+  background-color: whitesmoke;
+  margin: 2rem;
+  padding: 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  grid-template-areas:
+    "url"
+    "response"
+  ;
+
+  .empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 120px;
+      height: 100px;
+    }
+  }
+
+  .url {
+    grid-area: url;
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #fff;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "h2 h2 h2"
+      "input input btn"
+    ;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    // box-shadow: 10px 19px 24px -4px rgba(0, 0, 0, 0.45);
+    border-radius: 10px;
+
+    h2 {
+      grid-area: h2;
+    }
+
+    input {
+      grid-area: input;
+    }
+
+    .btn-box {
+      grid-area: btn;
+    }
+  }
+
+  .response {
+    grid-area: response;
+    display: grid;
+    // justify-content: center;
+    background-color: #fff;
+    padding: 1rem;
+
+  }
+
+  .form-control {
+    margin: 1rem;
+    min-width: 230px;
+    width: calc(100% - 2rem);
+    // height: 20px;
+    border-radius: 3px;
+    padding: 0.8rem 1rem;
+    border: 1px solid #3f3f3f;
+  }
+
+  .btn {
+    padding: .8rem 3rem;
+    background-color: rgb(78, 78, 239);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 30px;
+    min-width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    background-color: whitesmoke;
+    margin: 2rem;
+    padding: 2rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+    grid-template-areas:
+      "url"
+      "response"
+    ;
+
+
+    .url {
+      grid-area: url;
+      display: grid;
+      padding: 1rem;
+      grid-template-columns: 1fr;
+      background-color: #ffffff;
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+        "h2"
+        "input"
+        "btn"
+      ;
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+      // box-shadow: 10px 19px 24px -4px rgba(0, 0, 0, 0.45);
+      border-radius: 10px;
+
+      h2 {
+        grid-area: h2;
+      }
+
+      input {
+        grid-area: input;
+      }
+
+      .btn-box {
+        grid-area: btn;
+      }
+    }
+
+    .form-control {
+      min-width: 70%;
+    }
+
+  }
+}

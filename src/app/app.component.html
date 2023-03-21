@@ -1,0 +1,31 @@
+<app-preloader *ngIf="loading"></app-preloader>
+<div class="container">
+  <div class="url">
+    <!-- <div class="input"> -->
+    <h2>Url Shortener</h2>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter url ..."
+      id=""
+      [(ngModel)]="link"
+    />
+    <div class="btn-box">
+      <button class="btn" (click)="getShortLink()">Shorten Url</button>
+    </div>
+    <!-- </div> -->
+  </div>
+  <div class="response">
+    <div class="shorten-link" *ngFor="let item of shortenLink">
+      <span>short url for {{ item?.original_link }} </span>
+      <li>
+        <a href="{{ item?.full_short_link }}" target="_blank">{{
+          item?.short_link
+        }}</a>
+      </li>
+    </div>
+    <div class="empty" *ngIf="shortenLink.length === 0">
+      <img src="../assets/empty.png" alt="" />
+    </div>
+  </div>
+</div>
